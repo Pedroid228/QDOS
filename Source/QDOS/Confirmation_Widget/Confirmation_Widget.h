@@ -23,10 +23,12 @@ protected:
 	
 	UPROPERTY(BlueprintReadWrite, Meta = (BindWidget) ) UTextBlock *Order_Text = 0;
 	UPROPERTY(BlueprintReadWrite, Meta = (BindWidget) ) UButton *To_Main_Menu_Button = 0;
+	UPROPERTY(BlueprintReadWrite, Meta = (BindWidget) ) UButton *Back_Button = 0;
 	UPROPERTY(BlueprintAssignable) FOn_View_Model_Updated On_View_Model_Updated;
 	
 private:
 	UFUNCTION() void On_Main_Menu();
+	UFUNCTION() void On_Back();
 	
 	UPROPERTY() UVM_Drink_Order *VM_Drink_Order = 0;
 };

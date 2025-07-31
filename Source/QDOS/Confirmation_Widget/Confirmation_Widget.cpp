@@ -24,8 +24,10 @@ void UConfirmation_Widget::NativeConstruct()
 
 	check(Order_Text != 0);
 	check(To_Main_Menu_Button != 0);
+	check(Back_Button != 0)
 	
 	To_Main_Menu_Button->OnClicked.AddDynamic(this, &UConfirmation_Widget::On_Main_Menu);
+	Back_Button->OnClicked.AddDynamic(this, &UConfirmation_Widget::On_Back);
 }
 //------------------------------------------------------------------------------------------------------------
 void UConfirmation_Widget::On_Main_Menu()
@@ -33,5 +35,11 @@ void UConfirmation_Widget::On_Main_Menu()
 	check(VM_Drink_Order);
 
 	VM_Drink_Order->Go_Forward();
+}
+//------------------------------------------------------------------------------------------------------------
+void UConfirmation_Widget::On_Back()
+{
+	check(VM_Drink_Order != 0);
+	VM_Drink_Order->Go_Back();
 }
 //------------------------------------------------------------------------------------------------------------
